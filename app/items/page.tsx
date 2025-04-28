@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
 import { Card, CardContent } from "@/components/ui/card"
 import { FormHeader } from "@/components/form-header"
 import { ItemsList } from "@/components/items-list"
@@ -19,7 +18,6 @@ import { Plus } from "lucide-react"
 export default function ItemsPage() {
   const router = useRouter()
   const { toast } = useToast()
-  const [progress] = useState(100)
   const [termsAgreed, setTermsAgreed] = useState(false)
   const [items, setItems] = useState([
     {
@@ -154,7 +152,6 @@ export default function ItemsPage() {
       </Card>
 
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t z-20">
-        <Progress value={progress} className="mb-4" />
         <div className="grid grid-cols-2 gap-4">
           <Button onClick={handleBack} variant="outline">
             Back

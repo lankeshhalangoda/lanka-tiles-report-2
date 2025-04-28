@@ -67,3 +67,43 @@ body {
 .active\:cursor-grabbing:active {
   cursor: grabbing;
 }
+
+/* Background blur when toast is visible */
+[data-state="open"] ~ main {
+  filter: blur(2px);
+  transition: filter 0.2s ease-in-out;
+  pointer-events: none; /* Prevent interaction while toast is visible */
+}
+
+[data-state="closed"] ~ main {
+  filter: blur(0);
+  transition: filter 0.2s ease-in-out;
+  pointer-events: auto;
+}
+
+/* Toast animations for top-right position */
+@keyframes toast-slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-slide-out-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+[data-state="open"][data-swipe="end"] {
+  animation: toast-slide-out-right 0.2s ease-out forwards;
+}
+
+[data-state="open"] {
+  animation: toast-slide-in-right 0.2s ease-out;
+}

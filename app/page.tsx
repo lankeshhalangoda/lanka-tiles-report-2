@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
 import { Card, CardContent } from "@/components/ui/card"
 import { FormHeader } from "@/components/form-header"
 import { CustomerForm } from "@/components/customer-form"
@@ -12,7 +11,6 @@ import { StatusDropdown } from "@/components/status-dropdown"
 
 export default function Home() {
   const router = useRouter()
-  const [progress] = useState(33)
   const [selectedTileColor, setSelectedTileColor] = useState("default")
 
   const handleNext = () => {
@@ -34,7 +32,6 @@ export default function Home() {
       </Card>
 
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t z-20">
-        <Progress value={progress} className="mb-4" />
         <Button onClick={handleNext} className="w-full bg-[#f02424] hover:bg-[#d01414]">
           Next: Tile Layout
         </Button>

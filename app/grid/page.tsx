@@ -3,7 +3,6 @@
 import { useState, useRef } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/ui/button"
-import { Progress } from "@/components/ui/progress"
 import { Card, CardContent } from "@/components/ui/card"
 import { FormHeader } from "@/components/form-header"
 import { DrawableGrid } from "@/components/drawable-grid"
@@ -16,7 +15,6 @@ import { useSearchParams } from "next/navigation"
 export default function GridPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const [progress] = useState(66)
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [dimensions, setDimensions] = useState({ width: 5, height: 5 })
 
@@ -57,7 +55,6 @@ export default function GridPage() {
       </Card>
 
       <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t z-20">
-        <Progress value={progress} className="mb-4" />
         <div className="grid grid-cols-2 gap-4">
           <Button onClick={handleBack} variant="outline">
             Back
