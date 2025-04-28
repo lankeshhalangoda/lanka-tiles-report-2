@@ -52,7 +52,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "shower",
       name: "Shower",
-      image: "/fixtures/shower.jpeg",
+      image: "/fixtures/shower.jpg",
       width: 2,
       height: 2,
       category: "bathroom",

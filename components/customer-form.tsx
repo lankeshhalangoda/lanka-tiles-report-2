@@ -108,18 +108,6 @@ export function CustomerForm({ onTileColorChange }: CustomerFormProps) {
           >
             Renovation
           </Button>
-          <Button
-            type="button"
-            variant={constructionType === "extension" ? "default" : "outline"}
-            className={`${
-              constructionType === "extension"
-                ? "bg-[#fde8e8] text-[#231f20] hover:bg-[#fbd5d5] border border-[#f8b4b4]"
-                : ""
-            } w-full`}
-            onClick={() => setConstructionType("extension")}
-          >
-            Extension
-          </Button>
         </div>
       </div>
 
