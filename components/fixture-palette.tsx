@@ -52,7 +52,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "shower",
       name: "Shower",
-      image: "/fixtures/shower.jpg",
+      image: "/fixtures/cube-icon.png",
       width: 2,
       height: 2,
       category: "bathroom",
@@ -61,7 +61,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "kitchen-sink",
       name: "Kitchen Sink",
-      image: "/fixtures/kitchen/sink.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 2,
       height: 1,
       category: "kitchen",
@@ -69,7 +69,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "stove",
       name: "Stove",
-      image: "/fixtures/kitchen/stove.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 2,
       height: 2,
       category: "kitchen",
@@ -77,7 +77,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "refrigerator",
       name: "Refrigerator",
-      image: "/fixtures/kitchen/refrigerator.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 2,
       height: 2,
       category: "kitchen",
@@ -86,7 +86,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "bed",
       name: "Bed",
-      image: "/fixtures/bedroom/bed.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 4,
       height: 3,
       category: "bedroom",
@@ -94,7 +94,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "wardrobe",
       name: "Wardrobe",
-      image: "/fixtures/bedroom/wardrobe.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 3,
       height: 1,
       category: "bedroom",
@@ -102,7 +102,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "dresser",
       name: "Dresser",
-      image: "/fixtures/bedroom/dresser.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 2,
       height: 1,
       category: "bedroom",
@@ -111,7 +111,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "sofa",
       name: "Sofa",
-      image: "/fixtures/living/sofa.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 4,
       height: 2,
       category: "living",
@@ -119,7 +119,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "tv",
       name: "TV Stand",
-      image: "/fixtures/living/tv.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 3,
       height: 1,
       category: "living",
@@ -127,7 +127,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
     {
       id: "coffee-table",
       name: "Coffee Table",
-      image: "/fixtures/living/table.jpeg",
+      image: "/fixtures/cube-icon.png",
       width: 2,
       height: 2,
       category: "living",
@@ -239,7 +239,7 @@ export function FixturePalette({ onDragStart }: FixturePaletteProps) {
                   src={fixture.image || "/placeholder.svg"}
                   alt={fixture.name}
                   fill
-                  className="object-cover"
+                  className={`object-${fixture.image.includes("cube-icon") ? "contain p-2" : "cover"}`}
                   sizes="64px"
                 />
               </div>

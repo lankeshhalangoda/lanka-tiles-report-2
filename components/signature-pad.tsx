@@ -10,9 +10,10 @@ import { Input } from "@/components/ui/input"
 
 interface SignaturePadProps {
   label: string
+  allowUpload?: boolean
 }
 
-export function SignaturePad({ label }: SignaturePadProps) {
+export function SignaturePad({ label, allowUpload = true }: SignaturePadProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const [isDrawing, setIsDrawing] = useState(false)
   const contextRef = useRef<CanvasRenderingContext2D | null>(null)
@@ -169,22 +170,24 @@ export function SignaturePad({ label }: SignaturePadProps) {
       )}
 
       <div className="flex justify-between">
-        <div className="flex items-center">
-          <Input
-            type="file"
-            id={`upload-${label.replace(/\s+/g, "-").toLowerCase()}`}
-            className="hidden"
-            accept="image/*"
-            onChange={handleImageUpload}
-          />
-          <Label
-            htmlFor={`upload-${label.replace(/\s+/g, "-").toLowerCase()}`}
-            className="flex items-center text-xs cursor-pointer bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md"
-          >
-            <Upload className="h-3 w-3 mr-1" />
-            Upload
-          </Label>
-        </div>
+        {allowUpload && (
+          <div className="flex items-center">
+            <Input
+              type="file"
+              id={`upload-${label.replace(/\s+/g, "-").toLowerCase()}`}
+              className="hidden"
+              accept="image/*"
+              onChange={handleImageUpload}
+            />
+            <Label
+              htmlFor={`upload-${label.replace(/\s+/g, "-").toLowerCase()}`}
+              className="flex items-center text-xs cursor-pointer bg-gray-100 hover:bg-gray-200 px-3 py-1.5 rounded-md"
+            >
+              <Upload className="h-3 w-3 mr-1" />
+              Upload
+            </Label>
+          </div>
+        )}
 
         <Button variant="outline" size="sm" onClick={clearCanvas}>
           Clear

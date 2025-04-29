@@ -29,6 +29,7 @@ export function CustomerForm({ onTileColorChange }: CustomerFormProps) {
   const [constructionType, setConstructionType] = useState("new")
   const [constructionStage, setConstructionStage] = useState("foundation")
   const [selectedTileColor, setSelectedTileColor] = useState("default")
+  const [customerRole, setCustomerRole] = useState("homeowner")
 
   const handleTileColorChange = (value: string) => {
     setSelectedTileColor(value)
@@ -40,9 +41,46 @@ export function CustomerForm({ onTileColorChange }: CustomerFormProps) {
   return (
     <div className="space-y-6">
       <div className="space-y-4">
+        <div className="grid grid-cols-2 gap-4">
+          <div className="grid gap-2">
+            <Label htmlFor="customerName">Customer Name</Label>
+            <Input id="customerName" placeholder="Enter customer name" />
+          </div>
+
+          <div className="grid gap-2">
+            <Label htmlFor="customerRole">Customer Role</Label>
+            <Select defaultValue={customerRole} onValueChange={setCustomerRole}>
+              <SelectTrigger>
+                <SelectValue placeholder="Select role" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="homeowner">I am the house owner</SelectItem>
+                <SelectItem value="contractor">I am the contractor</SelectItem>
+                <SelectItem value="designer">I am the designer</SelectItem>
+                <SelectItem value="other">Other</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+
         <div className="grid gap-2">
-          <Label htmlFor="formNo">Form No.</Label>
-          <Input id="formNo" placeholder="e.g. 52283" />
+          <Label htmlFor="address">Address</Label>
+          <Input id="address" placeholder="Enter address" />
+        </div>
+
+        <div className="grid gap-2">
+          <Label htmlFor="contactNo2">Contact No. 2 (Optional)</Label>
+          <Input id="contactNo2" placeholder="Enter secondary contact number" />
+        </div>
+
+        <div className="grid gap-2">
+          <Label htmlFor="tilerName">Tiler Name</Label>
+          <Input id="tilerName" placeholder="Enter tiler name" />
+        </div>
+
+        <div className="grid gap-2">
+          <Label htmlFor="tilerContact">Tiler Contact</Label>
+          <Input id="tilerContact" placeholder="Enter tiler contact" />
         </div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -56,36 +94,11 @@ export function CustomerForm({ onTileColorChange }: CustomerFormProps) {
             <Input id="time" type="time" />
           </div>
         </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="customerName">Customer Name</Label>
-          <Input id="customerName" placeholder="Enter customer name" />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="address">Address</Label>
-          <Input id="address" placeholder="Enter address" />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="contactNo">Contact No.</Label>
-          <Input id="contactNo" placeholder="Enter contact number" />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="tilerName">Tiler Name</Label>
-          <Input id="tilerName" placeholder="Enter tiler name" />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="tilerContact">Tiler Contact</Label>
-          <Input id="tilerContact" placeholder="Enter tiler contact" />
-        </div>
       </div>
 
       <div className="space-y-4">
         <h3 className="font-semibold">Construction Type</h3>
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 gap-4">
           <Button
             type="button"
             variant={constructionType === "new" ? "default" : "outline"}
