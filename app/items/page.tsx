@@ -163,7 +163,7 @@ export default function ItemsPage() {
                     <Info className="h-4 w-4 text-gray-500" />
                   </Button>
                 </DialogTrigger>
-                <DialogContent className="sm:max-w-[500px]">
+                <DialogContent className="sm:max-w-[500px] bg-white">
                   <DialogHeader>
                     <DialogTitle>Terms and Conditions</DialogTitle>
                   </DialogHeader>

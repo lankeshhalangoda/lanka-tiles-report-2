@@ -169,7 +169,7 @@ export function SignaturePad({ label, allowUpload = true }: SignaturePadProps) {
         </div>
       )}
 
-      <div className="flex justify-between">
+<div className={`flex ${allowUpload ? "justify-between" : "justify-end"}`}>
         {allowUpload && (
           <div className="flex items-center">
             <Input

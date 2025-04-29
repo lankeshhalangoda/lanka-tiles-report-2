@@ -54,9 +54,10 @@ export function CustomerForm({ onTileColorChange }: CustomerFormProps) {
                 <SelectValue placeholder="Select role" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="homeowner">I am the house owner</SelectItem>
-                <SelectItem value="contractor">I am the contractor</SelectItem>
-                <SelectItem value="designer">I am the designer</SelectItem>
+                <SelectItem value="homeowner">House Owner</SelectItem>
+                <SelectItem value="contractor">Contractor</SelectItem>
+                <SelectItem value="designer">Designer</SelectItem>
+                <SelectItem value="mason">Mason</SelectItem>
                 <SelectItem value="other">Other</SelectItem>
               </SelectContent>
             </Select>
@@ -66,11 +67,6 @@ export function CustomerForm({ onTileColorChange }: CustomerFormProps) {
         <div className="grid gap-2">
           <Label htmlFor="address">Address</Label>
           <Input id="address" placeholder="Enter address" />
-        </div>
-
-        <div className="grid gap-2">
-          <Label htmlFor="contactNo2">Contact No. 2 (Optional)</Label>
-          <Input id="contactNo2" placeholder="Enter secondary contact number" />
         </div>
 
         <div className="grid gap-2">
